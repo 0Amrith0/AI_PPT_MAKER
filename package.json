@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node server/index.js",
     "server": "nodemon server/index.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm install && npm run build",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm install && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-all": "npm install && cd client && npm install"
+    "install-all": "npm install && cd frontend && npm install"
   },
   "keywords": [],
   "author": "",
