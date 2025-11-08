@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import PptxGenJS from 'pptxgenjs';
 import dotenv from 'dotenv' 
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -15,6 +17,16 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
 
 app.post('/api/chat', async (req, res) => {
   try {
