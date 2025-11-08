@@ -22,7 +22,7 @@ function App() {
 
     try {
       // Send to AI with current presentation data for editing
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -84,7 +84,7 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/generate-ppt', {
+      const response = await fetch('/api/generate-ppt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ slideData: pptData })
