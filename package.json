@@ -1,0 +1,30 @@
+{
+ "name": "ppt-chat-app",
+ "version": "1.0.0",
+ "description": "AI-powered chat application with PPT generation",
+ "main": "server/index.js",
+ "scripts": {
+  "start": "node server/index.js",
+  "dev": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "nodemon server/index.js",
+  "client": "cd client && npm start",
+  "install-all": "npm install && cd client && npm install"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "devDependencies": {
+  "@google/generative-ai": "^0.24.1",
+  "body-parser": "^2.2.0",
+  "concurrently": "^8.2.2",
+  "cors": "^2.8.5",
+  "express": "^5.1.0",
+  "install": "^0.13.0",
+  "nodemon": "^3.1.10",
+  "npm": "^11.6.2",
+  "pptxgenjs": "^4.0.1"
+ },
+ "dependencies": {
+  "dotenv": "^17.2.3"
+ }
+}
