@@ -52,9 +52,9 @@ function App() {
             const isEdit = pptData !== null;
 
             if (isEdit) {
-              userFriendlyMessage = `✅ Presentation updated! Your presentation now has ${slideCount} slide${slideCount !== 1 ? 's' : ''}. Check the preview on the right.`;
+              userFriendlyMessage = `Presentation updated! Your presentation now has ${slideCount} slide${slideCount !== 1 ? 's' : ''}. Check the preview on the right.`;
             } else {
-              userFriendlyMessage = `✅ Presentation created successfully! I've generated ${slideCount} slide${slideCount !== 1 ? 's' : ''} for "${parsedData.title}". Check the preview on the right and click "Generate PPT" when ready.`;
+              userFriendlyMessage = `Presentation created successfully! I've generated ${slideCount} slide${slideCount !== 1 ? 's' : ''} for "${parsedData.title}". Check the preview on the right and click "Generate PPT" when ready.`;
             }
           }
         }
